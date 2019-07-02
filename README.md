@@ -7,21 +7,18 @@
 
 
 ## 接入Android原生模块
-*按照官方的说法，第一步需要创建一个java类`本例中为：ToastModule`，并继承`ReactContextBaseJavaModule`，然后复写`getName()`方法，其返回值，就是在`react-native`中引用的`组件名称`*  
-*复写 `getConstants()`方法可以返回一些`常量`用于react-native中调用，官方文档中 `return "ToastAndroid" 这个名称在原生的组件中已经存在，返回相同的名称将会冲突，so:改个名字吧！！`*  
-*`@ReactMethod`注解：用于java返回一个`react-native`中可调用的`方法` ，其不能有返回值所以使用 `void`*
-*注册模块：创建java类`本例中为：ExampleReactPackage`，实现`ReactPackage`接口*  
-*复写createJSModules() , createViewManagers() 方法，返回`Collections.emptyList()`空集合*
-*`createNativeModules()`方法中添加我们需注册的模块对象，`new ToastModule()`,并返回模块集合*  
-*添加已注册模块对象到返回集合中，向react-native抛出模块，如：第三步*
-
-*在react-native中调用，如：第四步*
+- 按照官方的说法，第一步需要创建一个java类`本例中为：ToastModule`，并继承`ReactContextBaseJavaModule`，然后复写`getName()`方法，其返回值，就是在`react-native`中引用的`组件名称`
+- 复写 `getConstants()`方法可以返回一些`常量`用于react-native中调用，官方文档中 `return "ToastAndroid" 这个名称在原生的组件中已经存在，返回相同的名称将会冲突，so:改个名字吧！！`
+- `@ReactMethod`注解：用于java返回一个`react-native`中可调用的`方法` ，其不能有返回值所以使用 `void`
+- 注册模块：创建java类`本例中为：ExampleReactPackage`，实现`ReactPackage`接口
+- 复写createJSModules() , createViewManagers() 方法，返回`Collections.emptyList()`空集合
+- `createNativeModules()`方法中添加我们需注册的模块对象，`new ToastModule()`,并返回模块集合
 
 
 ### android目录结构
+### 注意：引入包的名称不要弄错了
 <img src="./images/c.png" width="200" />
 
-### 注意：引入包的名称不要弄错了
 
 ### Java React-native基本类型对照
 
